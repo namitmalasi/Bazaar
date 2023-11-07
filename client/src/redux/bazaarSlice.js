@@ -46,6 +46,12 @@ export const bazaarSlice = createSlice({
     resetCart: (state) => {
       state.productData = [];
     },
+    addUser: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    removeUser: (state) => {
+      state.userInfo = null;
+    },
   },
 });
 
@@ -55,5 +61,7 @@ export const {
   resetCart,
   increamentQuantity,
   decrementQuantity,
+  addUser,
+  removeUser,
 } = bazaarSlice.actions;
 export default bazaarSlice.reducer;

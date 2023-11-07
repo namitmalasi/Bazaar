@@ -7,12 +7,12 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-// import { addUser, removeUser } from "../redux/bazaarSlice";
+import { addUser, removeUser } from "../redux/bazaarSlice";
 import { useNavigate } from "react-router-dom";
 import { githubLogo, googleLogo } from "../assets";
 
 const Login = () => {
-  //   const userInfo = useSelector((state) => state.bazar.userInfo);
+  const userInfo = useSelector((state) => state.bazar.userInfo);
   const navigate = useNavigate("");
   const dispatch = useDispatch();
   const auth = getAuth();
@@ -75,7 +75,7 @@ const Login = () => {
         </div>
         {userInfo && (
           <button
-            // onClick={handleSignOut}
+            onClick={handleSignOut}
             className="bg-black text-white text-base py-3 px-8 tracking-wide rounded-md hover:bg-gray-800 duration-300"
           >
             Sign Out

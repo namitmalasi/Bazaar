@@ -9,8 +9,8 @@ import axios from "axios";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazaar.productData);
-  // const userInfo = useSelector((state) => state.bazar.userInfo);
-  // const [payNow, setPayNow] = useState(false);
+  const userInfo = useSelector((state) => state.bazaar.userInfo);
+  const [payNow, setPayNow] = useState(false);
   const [totalAmt, setTotalAmt] = useState("");
   useEffect(() => {
     let price = 0;
@@ -21,13 +21,13 @@ const Cart = () => {
     setTotalAmt(price.toFixed(2));
   }, [productData]);
 
-  // const handleCheckout = () => {
-  //   if (userInfo) {
-  //     setPayNow(true);
-  //   } else {
-  //     toast.error("Please sign in to Checkout");
-  //   }
-  // };
+  const handleCheckout = () => {
+    if (userInfo) {
+      setPayNow(true);
+    } else {
+      toast.error("Please sign in to Checkout");
+    }
+  };
   // const payment = async (token) => {
   //   await axios.post("http://localhost:8000/pay", {
   //     amount: totalAmt * 100,
