@@ -28,12 +28,13 @@ const Cart = () => {
       toast.error("Please sign in to Checkout");
     }
   };
-  // const payment = async (token) => {
-  //   await axios.post("http://localhost:8000/pay", {
-  //     amount: totalAmt * 100,
-  //     token: token,
-  //   });
-  // };
+
+  const payment = async (token) => {
+    await axios.post("https://bazaar-server.onrender.com/pay", {
+      amount: totalAmt * 100,
+      token: token,
+    });
+  };
 
   return (
     <div>
@@ -79,7 +80,7 @@ const Cart = () => {
                   amount={totalAmt * 100}
                   label="Pay to bazar"
                   description={`Your Payment amount is $${totalAmt}`}
-                  // token={payment}
+                  token={payment}
                   email={userInfo.email}
                 />
               </div>
