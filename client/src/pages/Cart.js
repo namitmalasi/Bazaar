@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
-// import StripeCheckout from "react-stripe-checkout";
+import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 
 const Cart = () => {
@@ -66,24 +66,24 @@ const Cart = () => {
               Total <span className="text-xl font-bold">${totalAmt}</span>
             </p>
             <button
-              // onClick={handleCheckout}
+              onClick={handleCheckout}
               className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300"
             >
               proceed to checkout
             </button>
-            {/* {payNow && (
+            {payNow && (
               <div className="w-full mt-6 flex items-center justify-center">
                 <StripeCheckout
-                  stripeKey="pk_test_51LXpmzBcfNkwYgIPXd3qq3e2m5JY0pvhaNZG7KSCklYpVyTCVGQATRH8tTWxDSYOnRTT5gxOjRVpUZmOWUEHnTxD00uxobBHkc"
+                  stripeKey="pk_test_51Jhc4YSHWH5bR8RUOegHAi71mlpU7DK5q66aLRCq5RQVOKeDWpj5s2tO05p8oYWitniPImCYXNHMKxE7MfotWbTz00v9I2TnIn"
                   name="Bazar Online Shopping"
                   amount={totalAmt * 100}
                   label="Pay to bazar"
                   description={`Your Payment amount is $${totalAmt}`}
-                  token={payment}
+                  // token={payment}
                   email={userInfo.email}
                 />
               </div>
-            )} */}
+            )}
           </div>
         </div>
       ) : (

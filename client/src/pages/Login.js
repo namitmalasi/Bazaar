@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { githubLogo, googleLogo } from "../assets";
 
 const Login = () => {
-  const userInfo = useSelector((state) => state.bazar.userInfo);
+  const userInfo = useSelector((state) => state.bazaar.userInfo);
   const navigate = useNavigate("");
   const dispatch = useDispatch();
   const auth = getAuth();
