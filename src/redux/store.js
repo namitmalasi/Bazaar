@@ -17,6 +17,7 @@ const persistConfig = {
   version: 1,
   storage,
 };
+
 const persistedReducer = persistReducer(persistConfig, bazaarReducer);
 
 export const store = configureStore({
